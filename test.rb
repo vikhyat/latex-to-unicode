@@ -8,8 +8,6 @@ DATA.readlines.each do |testcase|
   end
 end
 
-puts
-
 __END__
 \alpha    α
 \beta     β
