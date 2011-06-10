@@ -13,5 +13,9 @@ end
 puts
 
 __END__
-\alpha α
-\beta β
+\alpha    α
+\beta     β
+_23       ₂3
+_{23}     ₂₃
+^23       ²3
+^{23}     ²³
