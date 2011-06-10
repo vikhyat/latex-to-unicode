@@ -15,6 +15,7 @@ def convert(s)
   end
  
   # Convert superscripts and subscripts.
+  # TODO: make this more robust
   s2 = ""
   mode = :short
   type = :normal
