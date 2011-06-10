@@ -1,0 +1,10 @@
+<%
+  Dir.chdir(File.dirname(__FILE__))
+  require 'cgi'
+  require './convert.rb'
+
+  cgi = CGI.new
+  latex = cgi.params["latex"]
+%>
+
+<%= latex %>
