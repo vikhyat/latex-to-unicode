@@ -23,7 +23,7 @@ def convert(s)
     if ch == "{"
       mode = :long; next
     elsif ch == "}"
-      mode = :short; next
+      mode = :short; type = :normal; next
     elsif ch == "^"
       type = :super; next
     elsif ch == "_"
