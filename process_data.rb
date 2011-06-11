@@ -7,5 +7,5 @@ end
 puts "# coding: utf-8"
 subscrs, superscrs, syms = %w[subscripts superscripts symbols].map do |f|
   data = File.new("./data/#{f}").readlines.map {|l| l.split }
-  puts generate_assoc("$latex_#{f}", data)
+  puts generate_assoc("$latex_#{f}", data.sort_by {|k| k[0] }.reverse)
 end
