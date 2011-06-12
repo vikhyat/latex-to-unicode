@@ -1,4 +1,4 @@
-require './data'
+require File.dirname(__FILE__) + '/data.rb'
 
 module LatexToUnicode
   # If ch is in d.keys, return d[ch], otherwise return ch.

@@ -1,5 +1,5 @@
 # coding: utf-8
-require './convert.rb'
+require File.dirname(__FILE__) + '/convert.rb'
 
 DATA.readlines.each do |testcase|
   s, exp = testcase.split
