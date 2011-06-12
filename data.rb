@@ -1,5 +1,7 @@
 # coding: utf-8
-$latex_subscripts = {
+
+module LatexToUnicode
+SUBSCRIPTS = {
   "χ" => "ᵪ",
   "φ" => "ᵩ",
   "ρ" => "ᵨ",
@@ -29,7 +31,7 @@ $latex_subscripts = {
   ")" => "₎",
   "(" => "₍"
 }
-$latex_superscripts = {
+SUPERSCRIPTS = {
   "∊" => "ᵋ",
   "χ" => "ᵡ",
   "φ" => "ᵠ",
@@ -100,7 +102,7 @@ $latex_superscripts = {
   ")" => "⁾",
   "(" => "⁽"
 }
-$latex_symbols = {
+SYMBOLS = {
   "\\zeta" => "ζ",
   "\\xi" => "ξ",
   "\\wr" => "≀",
@@ -427,3 +429,4 @@ $latex_symbols = {
   "\\Bumpeq" => "≎",
   "\\Box" => "□"
 }
+end

@@ -11,7 +11,7 @@ module LatexToUnicode
 
     # Replace all latex symbols (alpha, beta, etc.) with the appropriate unicode
     # characters.
-    $latex_symbols.each do |latex, unicode|
+    LatexToUnicode::SYMBOLS.each do |latex, unicode|
       s1.gsub!(latex, unicode)
     end
 
@@ -32,10 +32,10 @@ module LatexToUnicode
       end
 
       if type == :super
-        s2 << translate_if_possible(ch, $latex_superscripts)
+        s2 << translate_if_possible(ch, LatexToUnicode::SUPERSCRIPTS)
         type = :regular if mode == :short
       elsif type == :sub
-        s2 << translate_if_possible(ch, $latex_subscripts)
+        s2 << translate_if_possible(ch, LatexToUnicode::SUBSCRIPTS)
         type = :regular if mode == :short
       else
         s2 << ch
