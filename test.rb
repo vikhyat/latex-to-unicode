@@ -3,8 +3,9 @@ require './convert.rb'
 
 DATA.readlines.each do |testcase|
   s, exp = testcase.split
-  if convert(s) != exp
-    puts "Error: '#{s}' gave '#{convert(s)}' instead of '#{exp}'."
+  res = LatexToUnicode::convert(s)
+  if res != exp
+    puts "Error: '#{s}' gave '#{res}' instead of '#{exp}'."
   end
 end
 

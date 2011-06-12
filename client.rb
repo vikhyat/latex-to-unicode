@@ -1,3 +1,3 @@
 require './convert.rb'
 
-puts convert(gets.chomp)
+puts LatexToUnicode::convert(gets.chomp)
