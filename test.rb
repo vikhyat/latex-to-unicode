@@ -19,3 +19,4 @@ _{23}a          ₂₃a
 ^{23}           ²³
 \alpha^\alpha   αᵅ
 \textbb{Ab}c    𝔸𝕓c
+\textbf{Ab}c    𝐀𝐛c
