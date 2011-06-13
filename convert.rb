@@ -46,13 +46,14 @@ module LatexToUnicode
       result.gsub!(latex, unicode)
     end
 
-    { "^" => LatexToUnicode::SUPERSCRIPTS,
-      "_" => LatexToUnicode::SUBSCRIPTS,
-      "\\bb" => LatexToUnicode::BB,
-      "\\bf" => LatexToUnicode::BF,
-      "\\cal" => LatexToUnicode::CAL,
-      "\\frak" => LatexToUnicode::FRAK,
-      "\\it" => LatexToUnicode::IT 
+    { "^"       => LatexToUnicode::SUPERSCRIPTS,
+      "_"       => LatexToUnicode::SUBSCRIPTS,
+      "\\bb"    => LatexToUnicode::BB,
+      "\\bf"    => LatexToUnicode::BF,
+      "\\cal"   => LatexToUnicode::CAL,
+      "\\frak"  => LatexToUnicode::FRAK,
+      "\\it"    => LatexToUnicode::IT,
+      "\\mono"  => LatexToUnicode::MONO
     }.each do |k, v|
       result = apply_modifier(result, k, v)
     end

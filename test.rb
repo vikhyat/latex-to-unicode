@@ -23,3 +23,4 @@ _{23}a          ₂₃a
 \cal{Ab}c       𝓐𝓫c
 \frak{Ab}c      𝔄𝔟c
 \it{Ab}c        𝐴𝑏c
+\mono{Ab}c      𝙰𝚋c
