@@ -46,12 +46,9 @@ module LatexToUnicode
       result.gsub!(latex, unicode)
     end
 
-    begin
-      result = apply_modifier(result, "^", LatexToUnicode::SUPERSCRIPTS)
-      result = apply_modifier(result, "_", LatexToUnicode::SUBSCRIPTS)
-    rescue ArgumentError => e
-      result = e.to_s
-    end
+    result = apply_modifier(result, "^", LatexToUnicode::SUPERSCRIPTS)
+    result = apply_modifier(result, "_", LatexToUnicode::SUBSCRIPTS)
+    result = apply_modifier(result, "\\textbb", LatexToUnicode::TEXTBB)
     
     result
   end

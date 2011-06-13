@@ -7,7 +7,7 @@ end
 puts "# coding: utf-8"
 puts
 puts "module LatexToUnicode"
-%w[subscripts superscripts symbols].map do |f|
+%w[subscripts superscripts symbols textbb].map do |f|
   data = File.new("./data/#{f}").readlines.map {|l| l.split }
   puts generate_assoc("#{f.upcase}", data.sort_by {|k| k[0] }.reverse)
 end
