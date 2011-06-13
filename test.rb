@@ -21,3 +21,4 @@ _{23}a          ₂₃a
 \bb{Ab}c        𝔸𝕓c
 \bf{Ab}c        𝐀𝐛c
 \cal{Ab}c       𝓐𝓫c
+\frak{Ab}c      𝔄𝔟c

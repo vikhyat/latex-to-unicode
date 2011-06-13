@@ -51,6 +51,7 @@ module LatexToUnicode
     result = apply_modifier(result, "\\bb", LatexToUnicode::BB)
     result = apply_modifier(result, "\\bf", LatexToUnicode::BF)
     result = apply_modifier(result, "\\cal", LatexToUnicode::CAL)
+    result = apply_modifier(result, "\\frak", LatexToUnicode::FRAK)
     
     result
   end
