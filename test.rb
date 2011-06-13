@@ -2,7 +2,7 @@
 require File.dirname(__FILE__) + '/convert.rb'
 
 DATA.readlines.each do |testcase|
-  s, exp = testcase.split
+  s, exp = testcase.split[0], testcase.split[1..-1].join(' ')
   res = LatexToUnicode::convert(s)
   if res != exp
     puts "Error: '#{s}' gave '#{res}' instead of '#{exp}'."
