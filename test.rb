@@ -18,6 +18,9 @@ class TestConverter < Test::Unit::TestCase
     assert_equal '²³', LatexToUnicode::convert('^{23}')
     assert_equal '²³a', LatexToUnicode::convert('^{23}a')
     assert_equal 'αᵅ', LatexToUnicode::convert('\alpha^\alpha')
+  end
+
+  def test_whitespace
     assert_equal 'αᵅ', LatexToUnicode::convert('\alpha ^ \alpha')
   end
 
