@@ -1,5 +1,5 @@
-require './data.rb'
-require './translate.rb'
+require File.dirname(__FILE__) + '/data.rb'
+require File.dirname(__FILE__) + '/translate.rb'
 
 module LatexToUnicode
   grammar Latex

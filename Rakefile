@@ -3,7 +3,7 @@
 task :default => [:process_data]
 
 task :process_data do
-  File.open('./data.rb', 'w') do |f|
+  File.open('./lib/data.rb', 'w') do |f|
     f.puts "# coding: utf-8"
     f.puts
     f.puts "module LatexToUnicode"

@@ -1,8 +1,6 @@
 # coding: utf-8
 require 'test/unit'
-require './convert.rb'
-
-Treetop.load 'latex'
+require './lib/convert.rb'
 
 class TestConverter < Test::Unit::TestCase
   def test_atoms
