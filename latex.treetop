@@ -4,23 +4,27 @@ require './translate.rb'
 module LatexToUnicode
   grammar Latex
     rule expression
-      ( supersub / bracketed / atoms )* {
+      ( unary / bracketed / atoms )* {
         def value
           elements.map {|x| x.value }.join
         end
       }
     end
 
-    rule supersub
-      f:('^' / '_') element {
+    rule unary
+      unary_command element {
         def value
-          set = case f.text_value
+          set = case unary_command.text_value
                 when '_' then LatexToUnicode::SUBSCRIPTS
                 when '^' then LatexToUnicode::SUPERSCRIPTS
                 end
           LatexToUnicode::translate(element.value, set)
         end
       }
+    end
+
+    rule unary_command
+      '^' / '_'
     end
 
     rule element
