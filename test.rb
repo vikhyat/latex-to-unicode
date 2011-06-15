@@ -14,9 +14,9 @@ class TestConverter < Test::Unit::TestCase
   end
 
   def test_superscripts
-    assert_equal "²3", @parser.parse("^23").value
-    assert_equal "²³", @parser.parse("^{23}").value
-    assert_equal "²³a", @parser.parse("^{23}a").value
-    assert_equal "αᵅ", @parser.parse("\alpha^\alpha").value
+    assert_equal '²3', LatexToUnicode::convert('^23')
+    assert_equal '²³', LatexToUnicode::convert('^{23}')
+    assert_equal '²³a', LatexToUnicode::convert('^{23}a')
+    assert_equal 'αᵅ', LatexToUnicode::convert('\alpha^\alpha')
   end
 end
