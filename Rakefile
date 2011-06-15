@@ -1,6 +1,6 @@
 # coding: utf-8
 
-task :default => [:process_data]
+task :default => [:process_data, :compile_treetop]
 
 task :process_data do
   File.open('./lib/data.rb', 'w') do |f|
@@ -16,4 +16,8 @@ task :process_data do
     end
     f.puts "end"
   end
+end
+
+task :compile_treetop do
+  system('tt lib/latex.treetop -o lib/latex_grammar.rb')
 end

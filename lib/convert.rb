@@ -1,6 +1,6 @@
 require 'treetop'
 require File.dirname(__FILE__) + '/data.rb'
-Treetop.load File.dirname(__FILE__) + '/latex.treetop'
+require File.dirname(__FILE__) + '/latex_grammar.rb'
 
 module LatexToUnicode
   def self.convert(str)
