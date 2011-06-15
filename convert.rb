@@ -3,9 +3,8 @@ require 'treetop'
 Treetop.load 'latex'
 
 module LatexToUnicode
-  PARSER = LatexParser.new
   def self.convert(str)
-    PARSER.parse(translate(str, SYMBOLS)).value
+    LatexParser.new.parse(translate(str, SYMBOLS)).value
   end
 end
 
