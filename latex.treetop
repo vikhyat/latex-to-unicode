@@ -2,10 +2,10 @@ require './data.rb'
 require './translate.rb'
 
 grammar Latex
-  rule super
+  rule superscript
     '^' bracketed {
       def value
-        LatexToUnicode::translate(bracketed, LatexToUnicode::SUPERSCRIPTS)
+        LatexToUnicode::translate(bracketed.value, LatexToUnicode::SUPERSCRIPTS)
       end
     } /
     bracketed
