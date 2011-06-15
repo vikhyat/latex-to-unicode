@@ -1,26 +1,26 @@
 # coding: utf-8
-require File.dirname(__FILE__) + '/convert.rb'
+require 'test/unit'
+require 'treetop'
 
-DATA.readlines.each do |testcase|
-  s, exp = testcase.split('|').map {|x| x.strip }
-  res = LatexToUnicode::convert(s)
-  if res != exp
-    puts "Error: '#{s}' gave '#{res}' instead of '#{exp}'."
+Treetop.load 'latex'
+
+class TestParser < Test::Unit::TestCase
+  def setup
+    @parser = LatexToUnicode::LatexParser.new
+  end
+
+  def test_atoms
+    # Ensure that all symbols are translated correctly
+    File.open('./data/symbols').readlines.each do |l|
+      sym, res = l.split
+      assert_equal res, @parser.parse(sym).value
+    end
+  end
+
+  def test_superscripts
+    assert_equal "²3", @parser.parse("^23").value
+    assert_equal "²³", @parser.parse("^{23}").value
+    assert_equal "²³a", @parser.parse("^{23}a").value
+    assert_equal "αᵅ", @parser.parse("\alpha^\alpha").value
   end
 end
-
-__END__
-\alpha        | α
-\beta         | β
-_23           | ₂3
-_{23}         | ₂₃
-_{23}a        | ₂₃a
-^23           | ²3
-^{23}         | ²³
-\alpha^\alpha | αᵅ
-\bb{Ab}c      | 𝔸𝕓c
-\bf{Ab}c      | 𝐀𝐛c
-\cal{Ab}c     | 𝓐𝓫c
-\frak{Ab}c    | 𝔄𝔟c
-\it{Ab}c      | 𝐴𝑏c
-\mono{Ab}c    | 𝙰𝚋c
