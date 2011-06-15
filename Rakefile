@@ -21,3 +21,7 @@ end
 task :compile_treetop do
   system('tt lib/latex.treetop -o lib/latex_grammar.rb')
 end
+
+task :test do
+  ruby "./test.rb"
+end
