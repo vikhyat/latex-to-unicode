@@ -1,7 +1,6 @@
-This is based off a [similar project by ypsu][1].
+This script attempts to translate LaTeX math markup to a human-readable form 
+that uses Unicode characters wherever possible.
 
-I rewrote it in Ruby to make it a little easier to add characters and also
-because I wanted to make it available over the internet and I can only run
-Ruby on my shared host.
+This was inspired by a [similar project by ypsu][1].
 
 [1]: https://github.com/ypsu/latex-to-unicode
