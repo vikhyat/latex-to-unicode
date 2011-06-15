@@ -1,0 +1,28 @@
+require './data.rb'
+require './translate.rb'
+
+grammar Latex
+  rule super
+    '^' bracketed {
+      def value
+        LatexToUnicode::translate(bracketed, LatexToUnicode::SUPERSCRIPTS)
+      end
+    } /
+    bracketed
+  end
+
+  rule bracketed
+    '{' atoms '}' {
+      def value
+        atoms.to_s
+      end
+    } / atoms
+  end
+  rule atoms
+    [^{}]* {
+      def value
+        LatexToUnicode::translate(text_value, LatexToUnicode::SYMBOLS)
+      end
+    }
+  end
+end
