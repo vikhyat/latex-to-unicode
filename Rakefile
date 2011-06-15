@@ -7,9 +7,9 @@ task :process_data do
     f.puts "# coding: utf-8"
     f.puts
     f.puts "module LatexToUnicode"
-    %w[subscripts superscripts symbols bb bf cal frak it mono].map do |d|
-      f.puts "  #{d.upcase} = {"
-      f.puts File.readlines("./data/#{d}").sort.reverse.map {|l|
+    Dir.glob('./data/*').sort.each do |d|
+      f.puts "  #{d.split('/').last.upcase} = {"
+      f.puts File.readlines(d).sort.reverse.map {|l|
         "    #{l.split[0].inspect} => #{l.split[1].inspect}"
       }.join(",\n")
       f.puts "  }"
