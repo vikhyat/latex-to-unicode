@@ -4,7 +4,7 @@ require './translate.rb'
 module LatexToUnicode
   grammar Latex
     rule expression
-      ( superscript / bracketed / atoms )* {
+      ( superscript / subscript / bracketed / atoms )* {
         def value
           elements.map {|x| x.value }.join
         end
@@ -19,6 +19,14 @@ module LatexToUnicode
       }
     end
 
+    rule subscript
+      '_' element {
+        def value
+          LatexToUnicode::translate(element.value, LatexToUnicode::SUBSCRIPTS)
+        end
+      }
+    end
+    
     rule element
       bracketed / atom
     end

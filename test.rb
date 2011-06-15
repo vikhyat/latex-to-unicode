@@ -19,4 +19,11 @@ class TestConverter < Test::Unit::TestCase
     assert_equal '²³a', LatexToUnicode::convert('^{23}a')
     assert_equal 'αᵅ', LatexToUnicode::convert('\alpha^\alpha')
   end
+
+  def test_subscripts
+    assert_equal "₂3", LatexToUnicode::convert('_23')
+    assert_equal "₂₃", LatexToUnicode::convert('_{23}')
+    assert_equal "₂₃a", LatexToUnicode::convert('_{23}a')
+    assert_equal "αᵨ", LatexToUnicode::convert('\alpha_\rho')
+  end
 end
