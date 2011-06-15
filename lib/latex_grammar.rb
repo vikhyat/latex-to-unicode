@@ -32,20 +32,25 @@ module LatexToUnicode
       s0, i0 = [], index
       loop do
         i1 = index
-        r2 = _nt_unary
+        r2 = _nt_frac
         if r2
           r1 = r2
         else
-          r3 = _nt_bracketed
+          r3 = _nt_unary
           if r3
             r1 = r3
           else
-            r4 = _nt_atoms
+            r4 = _nt_bracketed
             if r4
               r1 = r4
             else
-              @index = i1
-              r1 = nil
+              r5 = _nt_atoms
+              if r5
+                r1 = r5
+              else
+                @index = i1
+                r1 = nil
+              end
             end
           end
         end
@@ -59,6 +64,64 @@ module LatexToUnicode
       r0.extend(Expression0)
 
       node_cache[:expression][start_index] = r0
+
+      r0
+    end
+
+    module Frac0
+      def n
+        elements[1]
+      end
+
+      def d
+        elements[2]
+      end
+    end
+
+    module Frac1
+      def value
+        LatexToUnicode::translate_fraction(n.value, d.value)
+      end
+    end
+
+    def _nt_frac
+      start_index = index
+      if node_cache[:frac].has_key?(index)
+        cached = node_cache[:frac][index]
+        if cached
+          cached = SyntaxNode.new(input, index...(index + 1)) if cached == true
+          @index = cached.interval.end
+        end
+        return cached
+      end
+
+      i0, s0 = index, []
+      if has_terminal?('\\frac', false, index)
+        r1 = instantiate_node(SyntaxNode,input, index...(index + 5))
+        @index += 5
+      else
+        terminal_parse_failure('\\frac')
+        r1 = nil
+      end
+      s0 << r1
+      if r1
+        r2 = _nt_element
+        s0 << r2
+        if r2
+          r3 = _nt_element
+          s0 << r3
+        end
+      end
+      if s0.last
+        r0 = instantiate_node(SyntaxNode,input, i0...index, s0)
+        r0.extend(Frac0)
+        r0.extend(Frac1)
+      else
+        @index = i0
+        r0 = nil
+      end
+
+      node_cache[:frac][start_index] = r0
 
       r0
     end

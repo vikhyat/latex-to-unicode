@@ -4,9 +4,17 @@ require File.dirname(__FILE__) + '/translate.rb'
 module LatexToUnicode
   grammar Latex
     rule expression
-      ( unary / bracketed / atoms )* {
+      ( frac / unary / bracketed / atoms )* {
         def value
           elements.map {|x| x.value }.join
+        end
+      }
+    end
+
+    rule frac
+      '\\frac' n:element d:element {
+        def value
+          LatexToUnicode::translate_fraction(n.value, d.value)
         end
       }
     end
