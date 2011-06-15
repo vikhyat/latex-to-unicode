@@ -14,9 +14,11 @@ module LatexToUnicode
     rule unary
       unary_command element {
         def value
-          set = case unary_command.text_value
-                when '_' then LatexToUnicode::SUBSCRIPTS
-                when '^' then LatexToUnicode::SUPERSCRIPTS
+          set = case (cmd = unary_command.text_value)
+                when '_'   then LatexToUnicode::SUBSCRIPTS
+                when '^'   then LatexToUnicode::SUPERSCRIPTS
+                else
+                  LatexToUnicode.const_get cmd[1..-1].upcase
                 end
           LatexToUnicode::translate(element.value, set)
         end
@@ -24,7 +26,7 @@ module LatexToUnicode
     end
 
     rule unary_command
-      '^' / '_'
+      '^' / '_' / '\bb' / '\bf' / '\cal' / '\frak' / '\it' / '\mono'
     end
 
     rule element

@@ -25,9 +25,18 @@ class TestConverter < Test::Unit::TestCase
   end
 
   def test_subscripts
-    assert_equal "₂3", LatexToUnicode::convert('_23')
-    assert_equal "₂₃", LatexToUnicode::convert('_{23}')
-    assert_equal "₂₃a", LatexToUnicode::convert('_{23}a')
-    assert_equal "αᵨ", LatexToUnicode::convert('\alpha_\rho')
+    assert_equal '₂3', LatexToUnicode::convert('_23')
+    assert_equal '₂₃', LatexToUnicode::convert('_{23}')
+    assert_equal '₂₃a', LatexToUnicode::convert('_{23}a')
+    assert_equal 'αᵨ', LatexToUnicode::convert('\alpha_\rho')
+  end
+
+  def test_fonts
+    assert_equal '𝔸𝕓c', LatexToUnicode::convert('\bb{Ab}c')
+    assert_equal '𝐀𝐛c', LatexToUnicode::convert('\bf{Ab}c')
+    assert_equal '𝓐𝓫c', LatexToUnicode::convert('\cal{Ab}c')
+    assert_equal '𝔄𝔟c', LatexToUnicode::convert('\frak{Ab}c')
+    assert_equal '𝐴𝑏c', LatexToUnicode::convert('\it{Ab}c')
+    assert_equal '𝙰𝚋c', LatexToUnicode::convert('\mono{Ab}c')
   end
 end
