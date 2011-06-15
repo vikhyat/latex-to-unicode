@@ -37,4 +37,24 @@ class TestConverter < Test::Unit::TestCase
     assert_equal '𝐴𝑏c', LatexToUnicode::convert('\it{Ab}c')
     assert_equal '𝙰𝚋c', LatexToUnicode::convert('\mono{Ab}c')
   end
+
+  def test_frac
+    assert_equal "½", LatexToUnicode::convert('\frac 1 2') 
+    assert_equal "⅓", LatexToUnicode::convert('\frac 1 3')
+    assert_equal "¼", LatexToUnicode::convert('\frac 1 4')
+    assert_equal "⅕", LatexToUnicode::convert('\frac 1 5')
+    assert_equal "⅙", LatexToUnicode::convert('\frac 1 6')
+    assert_equal "⅛", LatexToUnicode::convert('\frac 1 8')
+    assert_equal "⅔", LatexToUnicode::convert('\frac 2 3')
+    assert_equal "⅖", LatexToUnicode::convert('\frac 2 5')
+    assert_equal "¾", LatexToUnicode::convert('\frac 3 4')
+    assert_equal "⅗", LatexToUnicode::convert('\frac 3 5')
+    assert_equal "⅜", LatexToUnicode::convert('\frac 3 8')
+    assert_equal "⅘", LatexToUnicode::convert('\frac 4 5')
+    assert_equal "⅚", LatexToUnicode::convert('\frac 5 6')
+    assert_equal "⅝", LatexToUnicode::convert('\frac {5} {8}')
+    assert_equal "⅞", LatexToUnicode::convert('\frac {7} 8')
+    assert_equal "(2/14)", LatexToUnicode::convert('\frac 2 {14}')
+    assert_equal "(α/2)", LatexToUnicode::convert('\frac \alpha 2')
+  end
 end
