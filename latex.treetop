@@ -34,7 +34,7 @@ module LatexToUnicode
     rule atoms
       atom+ {
         def value
-          LatexToUnicode::translate(text_value, LatexToUnicode::SYMBOLS)
+          text_value
         end
       }
     end

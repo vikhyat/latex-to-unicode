@@ -1,19 +1,15 @@
 # coding: utf-8
 require 'test/unit'
-require 'treetop'
+require './convert.rb'
 
 Treetop.load 'latex'
 
-class TestParser < Test::Unit::TestCase
-  def setup
-    @parser = LatexToUnicode::LatexParser.new
-  end
-
+class TestConverter < Test::Unit::TestCase
   def test_atoms
     # Ensure that all symbols are translated correctly
     File.open('./data/symbols').readlines.each do |l|
       sym, res = l.split
-      assert_equal res, @parser.parse(sym).value
+      assert_equal res, LatexToUnicode::convert(sym)
     end
   end
 

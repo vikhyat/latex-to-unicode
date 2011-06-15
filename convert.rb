@@ -1,5 +1,15 @@
 require File.dirname(__FILE__) + '/data.rb'
+require 'treetop'
+Treetop.load 'latex'
 
+module LatexToUnicode
+  PARSER = LatexParser.new
+  def self.convert(str)
+    PARSER.parse(translate(str, SYMBOLS)).value
+  end
+end
+
+__END__
 module LatexToUnicode
   # If ch is in d.keys, return d[ch], otherwise return ch.
   def self.translate_if_possible(ch, d)
