@@ -4,7 +4,7 @@ Treetop.load 'latex'
 
 module LatexToUnicode
   def self.convert(str)
-    LatexParser.new.parse(translate(str, SYMBOLS)).value
+    LatexParser.new.parse(translate(str.gsub(/\s/, ''), SYMBOLS)).value
   end
 end
 
