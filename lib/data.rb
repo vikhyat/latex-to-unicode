@@ -811,6 +811,7 @@ module LatexToUnicode
     "\\coprod" => "∐",
     "\\cong" => "≅",
     "\\complement" => "∁",
+    "\\colon" => ":",
     "\\clubsuit" => "♣",
     "\\circleddash" => "⊝",
     "\\circledcirc" => "⊚",

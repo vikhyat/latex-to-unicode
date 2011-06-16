@@ -139,9 +139,3 @@ $Z = \sum_{j}g_{j}e^{-\beta E_{j}}$
 \ll
 \ll
 \colon
-\min
-\sqrt{x}
-\bb{x}
-\aleph
-\itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv
-\itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv
