@@ -1,5 +1,6 @@
 \Box □
-\colon :
+\langle 〈
+\rangle 〉
 \Bumpeq ≎
 \Cap ⋒
 \Cup ⋓
@@ -92,6 +93,7 @@
 \circledcirc ⊚
 \circleddash ⊝
 \clubsuit ♣
+\colon :
 \complement ∁
 \cong ≅
 \coprod ∐
@@ -159,6 +161,7 @@
 \iota ι
 \kappa κ
 \lambda λ
+\lceil ⌈
 \le ≤
 \leadsto ↝
 \leftarrow ←
@@ -178,6 +181,7 @@
 \lesseqgtr ⋚
 \lessgtr ≶
 \lesssim ≲
+\lfloor ⌊
 \lhd ⊲
 \ll ≪
 \lll ⋘
@@ -230,6 +234,8 @@
 \prod ∏
 \propto ∝
 \psi ψ
+\rceil ⌉
+\rfloor ⌋
 \rhd ⊳
 \rho ρ
 \rightarrow →

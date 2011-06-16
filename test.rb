@@ -106,7 +106,12 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^\beta')
     assert_equal 'L₁⊂L₂⇒∀w∈L₁,w∈L₂', LatexToUnicode::convert('L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2')
     assert_equal 'Z=∑jgje⁻ᵝᴱʲ', LatexToUnicode::convert('Z=\sum_{j}g_{j}e^{-\beta E_{j}}')
-    assert_equal '', LatexToUnicode::convert('')
-    assert_equal '', LatexToUnicode::convert('')
+    assert_equal '𝐴∈ℝⁿˣⁿ,𝐯∈ℝⁿ,λᵢ∈ℝ:𝐴𝐯=λᵢ𝐯', LatexToUnicode::convert('\itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv')
+    assert_equal '∫xdx', LatexToUnicode::convert('\int x dx')
+    assert_equal 'α₁₂₃∈𝔊', LatexToUnicode::convert('\alpha_{123} \in \frak{G}')
+    assert_equal 'α₁₂₃∈𝔖', LatexToUnicode::convert('\alpha_{123} \in \mathfrak{S}')
+    assert_equal '∫⌈Γ(x)⌉dx', LatexToUnicode::convert('\int \lceil \Gamma(x) \rceil dx')
+    assert_equal '∫〈Γ(x)〉dx', LatexToUnicode::convert('\int \langle \Gamma(x) \rangle dx')
+    assert_equal 'm:I→H\':H\'⊆H,p(I,H\',Nf).', LatexToUnicode::convert('m : I \rightarrow { H\' : H\' \subseteq H, p(I, H\', N_{f}) }.')
   end
 end

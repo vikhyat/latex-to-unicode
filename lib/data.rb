@@ -2,6 +2,7 @@
 
 module LatexToUnicode
   ALIASES = {
+    "\\mathfrak" => "\\frak",
     "\\mathcal" => "\\cal",
     "\\mathbf" => "\\bf",
     "\\mathbb" => "\\bb",
@@ -673,6 +674,9 @@ module LatexToUnicode
     "\\rightarrow" => "→",
     "\\rho" => "ρ",
     "\\rhd" => "⊳",
+    "\\rfloor" => "⌋",
+    "\\rceil" => "⌉",
+    "\\rangle" => "〉",
     "\\psi" => "ψ",
     "\\propto" => "∝",
     "\\prod" => "∏",
@@ -725,6 +729,7 @@ module LatexToUnicode
     "\\lll" => "⋘",
     "\\ll" => "≪",
     "\\lhd" => "⊲",
+    "\\lfloor" => "⌊",
     "\\lesssim" => "≲",
     "\\lessgtr" => "≶",
     "\\lesseqgtr" => "⋚",
@@ -744,6 +749,8 @@ module LatexToUnicode
     "\\leftarrow" => "←",
     "\\leadsto" => "↝",
     "\\le" => "≤",
+    "\\lceil" => "⌈",
+    "\\langle" => "〈",
     "\\lambda" => "λ",
     "\\kappa" => "κ",
     "\\iota" => "ι",
