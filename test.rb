@@ -94,8 +94,8 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'x₄+y₆', LatexToUnicode::convert('x_4 + y_6')
     assert_equal '(2 / 31)', LatexToUnicode::convert('\frac{2}{31}')
     assert_equal '(2 / 31)', LatexToUnicode::convert('\dfrac{2}{31}')
-    assert_equal '', LatexToUnicode::convert('')
-    assert_equal '', LatexToUnicode::convert('')
+    assert_equal 'α⋅u', LatexToUnicode::convert('\alpha \cdot u')
+    assert_equal '∂𝕦', LatexToUnicode::convert('\partial \mathbb u')
     assert_equal '', LatexToUnicode::convert('')
   end
 end
