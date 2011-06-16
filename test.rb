@@ -104,7 +104,7 @@ class TestConverter < Test::Unit::TestCase
     assert_equal '𝐚', LatexToUnicode::convert('\mathbfa')
     assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^ \beta')
     assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^\beta')
-    assert_equal '', LatexToUnicode::convert('')
+    assert_equal 'L₁⊂L₂⇒∀w∈L₁,w∈L₂', LatexToUnicode::convert('L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2')
     assert_equal '', LatexToUnicode::convert('')
     assert_equal '', LatexToUnicode::convert('')
     assert_equal '', LatexToUnicode::convert('')

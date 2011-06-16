@@ -60,24 +60,9 @@ beta
 $L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2$
 L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2$
 [;p(n)=\sum _{a=2}^{2^n} \sin \left(\pi 2{}^{\wedge}\left(\left(\sum _{b=2}^a \frac{\sin ^2\left(\frac{\pi ((b-1)!)^2}{b}\right)}{\sin ^2\left(\frac{\pi }{b}\right)}-n\right){}^2-1\right)\right)\frac{a \sin ^2\left(\frac{\pi ((a-1)!)^2}{a}\right) }{\sin ^2\left(\frac{\pi }{a}\right)};]
-\ge
-\ge
-\ge
-\geq
-\ge
-2 \ge
-2 \le
-2 \leq
-2 \leq
-2 \le
-2 \le
-2 \le
 [;p(n)=\sum _{a=2}^{2^n} \sin \left(\pi 2{}^{\wedge}\left(\left(\sum _{b=2}^a \frac{\sin ^2\left(\frac{\pi ((b-1)!)^2}{b}\right)}{\sin ^2\left(\frac{\pi }{b}\right)}-n\right){}^2-1\right)\right)\frac{a \sin ^2\left(\frac{\pi ((a-1)!)^2}{a}\right) }{\sin ^2\left(\frac{\pi }{a}\right)};]
 [;p(n)=\sum _{a=2}^{2^n} \sin \left(\pi 2{}^{\wedge}\left(\left(\sum _{b=2}^a \frac{\sin ^2\left(\frac{\pi ((b-1)!)^2}{b}\right)}{\sin ^2\left(\frac{\pi }{b}\right)}-n\right){}^2-1\right)\right)\frac{a \sin ^2\left(\frac{\pi ((a-1)!)^2}{a}\right) }{\sin ^2\left(\frac{\pi }{a}\right)};]
 [;p(n)=\sum _{a=2}^{2^n} \sin \left(\pi 2{}^{\wedge}\left(\left(\sum _{b=2}^a \frac{\sin ^2\left(\frac{\pi ((b-1)!)^2}{b}\right)}{\sin ^2\left(\frac{\pi }{b}\right)}-n\right){}^2-1\right)\right)\frac{a \sin ^2\left(\frac{\pi ((a-1)!)^2}{a}\right) }{\sin ^2\left(\frac{\pi }{a}\right)};]
-L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2$
-\int +
-\beta^2
 \alpha_{123}
 \alpha_{123} \in G
 \alpha_{123} \in \G
@@ -132,7 +117,7 @@ alpha
 \itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv
 \itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv
 \itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv
-interface.rhtml?latex=\sum_{i = 0}^{\infty}i
+latex=\sum_{i = 0}^{\infty}i
 \itA \in \bbR^{nxn}, \bfv \in \bbR^n, \lambda_i \in \bbR: \itA\bfv = \lambda_i\bfv
 Z = \sum_{j}g_{j}e^{-\beta E_{j}}
 $Z = \sum_{j}g_{j}e^{-\beta E_{j}}$
