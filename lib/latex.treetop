@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/translate.rb'
 module LatexToUnicode
   grammar Latex
     rule expression
-      ( frac / sqrt / combining / unary / grouped / atoms )* {
+      ( frac / sqrt / combining / unary / grouped / atom )* {
         def value
           elements.map {|x| x.value }.join
         end

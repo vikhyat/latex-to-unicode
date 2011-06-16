@@ -52,7 +52,7 @@ module LatexToUnicode
                 if r6
                   r1 = r6
                 else
-                  r7 = _nt_atoms
+                  r7 = _nt_atom
                   if r7
                     r1 = r7
                   else
