@@ -1,6 +1,10 @@
 # coding: utf-8
 
 module LatexToUnicode
+  ALIASES = {
+    "\\mathbb" => "\\bb",
+    "\\dfrac" => "\\frac"
+  }
   BB = {
     "z" => "𝕫",
     "y" => "𝕪",

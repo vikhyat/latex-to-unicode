@@ -92,6 +92,9 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'ᵝ', LatexToUnicode::convert('^\beta')
     assert_equal 'x₄+y₆', LatexToUnicode::convert('x_{4} + y_{6}')
     assert_equal 'x₄+y₆', LatexToUnicode::convert('x_4 + y_6')
+    assert_equal '(2 / 31)', LatexToUnicode::convert('\frac{2}{31}')
+    assert_equal '(2 / 31)', LatexToUnicode::convert('\dfrac{2}{31}')
+    assert_equal '', LatexToUnicode::convert('')
     assert_equal '', LatexToUnicode::convert('')
     assert_equal '', LatexToUnicode::convert('')
   end
