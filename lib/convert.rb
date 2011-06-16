@@ -13,7 +13,7 @@ module LatexToUnicode
     if m
       m.value
     else
-      "Parsing error."
+      raise ArgumentError, "Parsing failed."
     end
   end
 end
