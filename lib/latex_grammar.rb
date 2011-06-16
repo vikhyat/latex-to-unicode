@@ -36,20 +36,25 @@ module LatexToUnicode
         if r2
           r1 = r2
         else
-          r3 = _nt_unary
+          r3 = _nt_sqrt
           if r3
             r1 = r3
           else
-            r4 = _nt_grouped
+            r4 = _nt_unary
             if r4
               r1 = r4
             else
-              r5 = _nt_atoms
+              r5 = _nt_grouped
               if r5
                 r1 = r5
               else
-                @index = i1
-                r1 = nil
+                r6 = _nt_atoms
+                if r6
+                  r1 = r6
+                else
+                  @index = i1
+                  r1 = nil
+                end
               end
             end
           end
@@ -96,11 +101,11 @@ module LatexToUnicode
       end
 
       i0, s0 = index, []
-      if has_terminal?('\\frac', false, index)
+      if has_terminal?('\frac', false, index)
         r1 = instantiate_node(SyntaxNode,input, index...(index + 5))
         @index += 5
       else
-        terminal_parse_failure('\\frac')
+        terminal_parse_failure('\frac')
         r1 = nil
       end
       s0 << r1
@@ -122,6 +127,164 @@ module LatexToUnicode
       end
 
       node_cache[:frac][start_index] = r0
+
+      r0
+    end
+
+    module Sqrt0
+      def atom
+        elements[1]
+      end
+    end
+
+    module Sqrt1
+      def n
+        elements[1]
+      end
+
+      def element
+        elements[3]
+      end
+    end
+
+    module Sqrt2
+      def value
+        LatexToUnicode::translate_sqrt(element.value, n.text_value)
+      end
+    end
+
+    module Sqrt3
+      def element
+        elements[1]
+      end
+    end
+
+    module Sqrt4
+      def value
+        LatexToUnicode::translate_sqrt(element.value, 2)
+      end
+    end
+
+    def _nt_sqrt
+      start_index = index
+      if node_cache[:sqrt].has_key?(index)
+        cached = node_cache[:sqrt][index]
+        if cached
+          cached = SyntaxNode.new(input, index...(index + 1)) if cached == true
+          @index = cached.interval.end
+        end
+        return cached
+      end
+
+      i0 = index
+      i1, s1 = index, []
+      if has_terminal?('\sqrt[', false, index)
+        r2 = instantiate_node(SyntaxNode,input, index...(index + 6))
+        @index += 6
+      else
+        terminal_parse_failure('\sqrt[')
+        r2 = nil
+      end
+      s1 << r2
+      if r2
+        s3, i3 = [], index
+        loop do
+          i4, s4 = index, []
+          i5 = index
+          if has_terminal?(']', false, index)
+            r6 = instantiate_node(SyntaxNode,input, index...(index + 1))
+            @index += 1
+          else
+            terminal_parse_failure(']')
+            r6 = nil
+          end
+          if r6
+            r5 = nil
+          else
+            @index = i5
+            r5 = instantiate_node(SyntaxNode,input, index...index)
+          end
+          s4 << r5
+          if r5
+            r7 = _nt_atom
+            s4 << r7
+          end
+          if s4.last
+            r4 = instantiate_node(SyntaxNode,input, i4...index, s4)
+            r4.extend(Sqrt0)
+          else
+            @index = i4
+            r4 = nil
+          end
+          if r4
+            s3 << r4
+          else
+            break
+          end
+        end
+        if s3.empty?
+          @index = i3
+          r3 = nil
+        else
+          r3 = instantiate_node(SyntaxNode,input, i3...index, s3)
+        end
+        s1 << r3
+        if r3
+          if has_terminal?(']', false, index)
+            r8 = instantiate_node(SyntaxNode,input, index...(index + 1))
+            @index += 1
+          else
+            terminal_parse_failure(']')
+            r8 = nil
+          end
+          s1 << r8
+          if r8
+            r9 = _nt_element
+            s1 << r9
+          end
+        end
+      end
+      if s1.last
+        r1 = instantiate_node(SyntaxNode,input, i1...index, s1)
+        r1.extend(Sqrt1)
+        r1.extend(Sqrt2)
+      else
+        @index = i1
+        r1 = nil
+      end
+      if r1
+        r0 = r1
+      else
+        i10, s10 = index, []
+        if has_terminal?('\sqrt', false, index)
+          r11 = instantiate_node(SyntaxNode,input, index...(index + 5))
+          @index += 5
+        else
+          terminal_parse_failure('\sqrt')
+          r11 = nil
+        end
+        s10 << r11
+        if r11
+          r12 = _nt_element
+          s10 << r12
+        end
+        if s10.last
+          r10 = instantiate_node(SyntaxNode,input, i10...index, s10)
+          r10.extend(Sqrt3)
+          r10.extend(Sqrt4)
+        else
+          @index = i10
+          r10 = nil
+        end
+        if r10
+          r0 = r10
+        else
+          @index = i0
+          r0 = nil
+        end
+      end
+
+      node_cache[:sqrt][start_index] = r0
 
       r0
     end

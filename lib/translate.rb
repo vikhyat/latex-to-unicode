@@ -30,4 +30,14 @@ module LatexToUnicode
       "(#{num} / #{den})"
     end
   end
+
+  def self.translate_sqrt(radicand, radical)
+    case radical.to_i
+    when 2 then "√(#{radicand})"
+    when 3 then "∛(#{radicand})"
+    when 4 then "∜(#{radicand})"
+    else
+      "#{translate(radical, SUPERSCRIPTS)}√(#{radicand})"
+    end
+  end
 end

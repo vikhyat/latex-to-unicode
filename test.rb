@@ -59,6 +59,11 @@ class TestConverter < Test::Unit::TestCase
   end
 
   def test_sqrt
-    p LatexToUnicode::convert('\sqrt 2')
+    assert_equal "√(2)", LatexToUnicode::convert('\sqrt[2] 2')
+    assert_equal "√(2)", LatexToUnicode::convert('\sqrt 2')
+    assert_equal "∛(2)", LatexToUnicode::convert('\sqrt[3] 2')
+    assert_equal "∜(2)", LatexToUnicode::convert('\sqrt[4] 2')
+    assert_equal "ᵃ√(3)", LatexToUnicode::convert('\sqrt[a]3')
+    assert_equal "√(28)", LatexToUnicode::convert('\sqrt {28}')
   end
 end
