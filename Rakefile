@@ -10,7 +10,7 @@ task :process_data do
     Dir.glob('./data/*').sort.each do |d|
       f.puts "  #{d.split('/').last.upcase} = {"
       f.puts File.readlines(d).sort.reverse.map {|l|
-        "    #{l.split[0].inspect} => #{l.split[1].inspect}"
+        "    #{l.split[0].inspect} => #{(l.split[1] || ' ').inspect}"
       }.join(",\n")
       f.puts "  }"
     end

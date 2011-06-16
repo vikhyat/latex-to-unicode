@@ -20,6 +20,9 @@ class TestConverter < Test::Unit::TestCase
 
   def test_whitespace
     assert_equal 'αᵅ', LatexToUnicode::convert('\alpha ^ \alpha')
+    assert_equal 'α ᵅ', LatexToUnicode::convert('\alpha \; ^ \alpha')
+    assert_equal 'α ᵅ', LatexToUnicode::convert('\alpha \: ^ \alpha')
+    assert_equal 'α ᵅ', LatexToUnicode::convert('\alpha \, ^ \alpha')
   end
 
   def test_subscripts

@@ -913,4 +913,11 @@ module LatexToUnicode
     "\\Bumpeq" => "≎",
     "\\Box" => "□"
   }
+  WHITESPACE = {
+    "\\quad" => " ",
+    "\\qquad" => " ",
+    "\\;" => " ",
+    "\\:" => " ",
+    "\\," => " "
+  }
 end

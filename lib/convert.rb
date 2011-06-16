@@ -6,6 +6,7 @@ module LatexToUnicode
   def self.preprocess(str)
     str = str.gsub(/\s/, '')
     str = translate(str, ALIASES)
+    str = translate(str, WHITESPACE)
     str = translate(str, SYMBOLS)
   end
   def self.convert(str)
