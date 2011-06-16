@@ -84,4 +84,15 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'ä', LatexToUnicode::convert('\ddot{a}')
     assert_equal 'å', LatexToUnicode::convert('\mathring{a}')
   end
+
+  def test_actual_data
+    assert_equal '2⁺₂k3', LatexToUnicode::convert('2^+_2k3')
+    assert_equal 'α₃', LatexToUnicode::convert('\alpha_3')
+    assert_equal 'ᵅ', LatexToUnicode::convert('^\alpha')
+    assert_equal 'ᵝ', LatexToUnicode::convert('^\beta')
+    assert_equal 'x₄+y₆', LatexToUnicode::convert('x_{4} + y_{6}')
+    assert_equal 'x₄+y₆', LatexToUnicode::convert('x_4 + y_6')
+    assert_equal '', LatexToUnicode::convert('')
+    assert_equal '', LatexToUnicode::convert('')
+  end
 end
