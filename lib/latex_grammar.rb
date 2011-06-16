@@ -40,7 +40,7 @@ module LatexToUnicode
           if r3
             r1 = r3
           else
-            r4 = _nt_bracketed
+            r4 = _nt_grouped
             if r4
               r1 = r4
             else
@@ -300,7 +300,7 @@ module LatexToUnicode
       end
 
       i0 = index
-      r1 = _nt_bracketed
+      r1 = _nt_grouped
       if r1
         r0 = r1
       else
@@ -318,23 +318,23 @@ module LatexToUnicode
       r0
     end
 
-    module Bracketed0
+    module Grouped0
       def atoms
         elements[1]
       end
 
     end
 
-    module Bracketed1
+    module Grouped1
       def value
         atoms.value
       end
     end
 
-    def _nt_bracketed
+    def _nt_grouped
       start_index = index
-      if node_cache[:bracketed].has_key?(index)
-        cached = node_cache[:bracketed][index]
+      if node_cache[:grouped].has_key?(index)
+        cached = node_cache[:grouped][index]
         if cached
           cached = SyntaxNode.new(input, index...(index + 1)) if cached == true
           @index = cached.interval.end
@@ -367,14 +367,14 @@ module LatexToUnicode
       end
       if s0.last
         r0 = instantiate_node(SyntaxNode,input, i0...index, s0)
-        r0.extend(Bracketed0)
-        r0.extend(Bracketed1)
+        r0.extend(Grouped0)
+        r0.extend(Grouped1)
       else
         @index = i0
         r0 = nil
       end
 
-      node_cache[:bracketed][start_index] = r0
+      node_cache[:grouped][start_index] = r0
 
       r0
     end
