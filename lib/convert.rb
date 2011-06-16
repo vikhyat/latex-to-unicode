@@ -9,6 +9,11 @@ module LatexToUnicode
     str = translate(str, SYMBOLS)
   end
   def self.convert(str)
-    LatexParser.new.parse(preprocess(str)).value
+    m = LatexParser.new.parse(preprocess(str))
+    if m
+      m.value
+    else
+      "Parsing error."
+    end
   end
 end
