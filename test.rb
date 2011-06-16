@@ -57,4 +57,8 @@ class TestConverter < Test::Unit::TestCase
     assert_equal "(2 / 14)", LatexToUnicode::convert('\frac 2 {14}')
     assert_equal "(α / 2)", LatexToUnicode::convert('\frac \alpha 2')
   end
+
+  def test_sqrt
+    p LatexToUnicode::convert('\sqrt 2')
+  end
 end

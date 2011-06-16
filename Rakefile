@@ -1,6 +1,6 @@
 # coding: utf-8
 
-task :default => [:process_data, :compile_treetop]
+task :default => [:process_data, :compile_treetop, :test]
 
 task :process_data do
   File.open('./lib/data.rb', 'w') do |f|
