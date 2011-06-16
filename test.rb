@@ -105,7 +105,7 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^ \beta')
     assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^\beta')
     assert_equal 'L₁⊂L₂⇒∀w∈L₁,w∈L₂', LatexToUnicode::convert('L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2')
-    assert_equal '', LatexToUnicode::convert('')
+    assert_equal 'Z=∑jgje⁻ᵝᴱʲ', LatexToUnicode::convert('Z=\sum_{j}g_{j}e^{-\beta E_{j}}')
     assert_equal '', LatexToUnicode::convert('')
     assert_equal '', LatexToUnicode::convert('')
   end

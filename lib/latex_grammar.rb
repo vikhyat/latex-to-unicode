@@ -677,7 +677,7 @@ module LatexToUnicode
     end
 
     module Grouped0
-      def atoms
+      def expression
         elements[1]
       end
 
@@ -685,7 +685,7 @@ module LatexToUnicode
 
     module Grouped1
       def value
-        atoms.value
+        expression.value
       end
     end
 
@@ -710,7 +710,7 @@ module LatexToUnicode
       end
       s0 << r1
       if r1
-        r2 = _nt_atoms
+        r2 = _nt_expression
         s0 << r2
         if r2
           if has_terminal?('}', false, index)
