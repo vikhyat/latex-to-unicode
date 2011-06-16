@@ -1,63 +1,17 @@
 m \colon I \rightarrow \{ H' \colon H' \subseteq H, p(I, H', N_{f}) \}.
 m : I \rightarrow \{ H' : H' \subseteq H, p(I, H', N_{f}) \}.
 m : I \rightarrow { H' : H' \subseteq H, p(I, H', N_{f}) }.
-\partial
-\partial u
-\partialu
-\partial \u
-\partial \mathbb{u}
-\partial \mathbb u
-\alpha^{67}
-\alpha^{67}
 \log_2 x
 \log_2 x
 \sum_2 x
 \sum_2^3 x
-n_2
-\pi
-\nabla^2\partial
-\nabla^2\partial\alpha\beta\gamma
-\nabla^2\partial\alpha\beta\gamm
-\nabla^2\partial\alpha\beta\gamma
-\Alpha \int_0^{\inf}
-inf
-\inf
-\infinity
-\infty
-\inty
-\alpha
-\alpha\in
-\infty
-\inf
-\{infty}
-\{\infty}
-\intercal
-\Finv
 \int_3^1
 \\int_3^1
 int_3^1
-\d
-\dd
-\de
-\da
-\dots
-\ll
-\lll
-\int
 2 \in 3
 2 \in 3.2
 2 \in 3^2
 \in 3^2
-\lll
-\dots
-\int
-\int
-\int
-\alpha^\beta
-\alpha^ \beta
-\alpha^\beta
-7+8
-7+8
 \int 3^2
 \int f(x) dx
 _0\int^3 f(x) dx
@@ -123,15 +77,6 @@ L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2$
 [;p(n)=\sum _{a=2}^{2^n} \sin \left(\pi 2{}^{\wedge}\left(\left(\sum _{b=2}^a \frac{\sin ^2\left(\frac{\pi ((b-1)!)^2}{b}\right)}{\sin ^2\left(\frac{\pi }{b}\right)}-n\right){}^2-1\right)\right)\frac{a \sin ^2\left(\frac{\pi ((a-1)!)^2}{a}\right) }{\sin ^2\left(\frac{\pi }{a}\right)};]
 L_1 \subset L_2 \Rightarrow \forall w \in L_1, w \in L_2$
 \int +
-data.rb
-\le
-\le
-\le
-\ge
-Gamma
-\gamma
-\gamma \delta
-\alpha_{23}
 \beta^2
 \alpha_{123}
 \alpha_{123} \in G
@@ -178,8 +123,6 @@ v_f^2
 \itA \in \bbR^{nxn}, \bfv \in \bbRn, \ita \in \bbR: \itA\bfv = \ita\bfv
 \itA \in \bbR^{nxn}, \bfv \in \bbR^n, \ita \in \bbR: \itA\bfv = \ita\bfv
 alpha
-"α² ⋅ α²⁺³ ≡ α⁷": "\alpha^2 \cdot \alpha^{2+3} \equiv \alpha^7"
-α² ⋅ α²⁺³ ≡ α⁷": "\alpha^2 \cdot \alpha^{2+3} \equiv \alpha^7
 \int x \text{d} x
 \int xdx
 \alpha \beta \gamma ...

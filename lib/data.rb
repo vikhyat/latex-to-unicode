@@ -2,6 +2,8 @@
 
 module LatexToUnicode
   ALIASES = {
+    "\\mathcal" => "\\cal",
+    "\\mathbf" => "\\bf",
     "\\mathbb" => "\\bb",
     "\\dfrac" => "\\frac"
   }

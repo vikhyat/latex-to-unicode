@@ -96,6 +96,17 @@ class TestConverter < Test::Unit::TestCase
     assert_equal '(2 / 31)', LatexToUnicode::convert('\dfrac{2}{31}')
     assert_equal 'α⋅u', LatexToUnicode::convert('\alpha \cdot u')
     assert_equal '∂𝕦', LatexToUnicode::convert('\partial \mathbb u')
+    assert_equal 'α⁶⁷', LatexToUnicode::convert('\alpha^{67}')
+    assert_equal 'n₂', LatexToUnicode::convert('n_2')
+    assert_equal 'α²⋅α²⁺³≡α⁷', LatexToUnicode::convert('\alpha^2 \cdot \alpha^{2+3} \equiv \alpha^7')
+    assert_equal '∇²∂αβγ', LatexToUnicode::convert('\nabla^2\partial\alpha\beta\gamma')
+    assert_equal '𝓪', LatexToUnicode::convert('\mathcala')
+    assert_equal '𝐚', LatexToUnicode::convert('\mathbfa')
+    assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^ \beta')
+    assert_equal 'αᵝ', LatexToUnicode::convert('\alpha^\beta')
+    assert_equal '', LatexToUnicode::convert('')
+    assert_equal '', LatexToUnicode::convert('')
+    assert_equal '', LatexToUnicode::convert('')
     assert_equal '', LatexToUnicode::convert('')
   end
 end
