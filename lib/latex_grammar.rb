@@ -40,20 +40,25 @@ module LatexToUnicode
           if r3
             r1 = r3
           else
-            r4 = _nt_unary
+            r4 = _nt_combining
             if r4
               r1 = r4
             else
-              r5 = _nt_grouped
+              r5 = _nt_unary
               if r5
                 r1 = r5
               else
-                r6 = _nt_atoms
+                r6 = _nt_grouped
                 if r6
                   r1 = r6
                 else
-                  @index = i1
-                  r1 = nil
+                  r7 = _nt_atoms
+                  if r7
+                    r1 = r7
+                  else
+                    @index = i1
+                    r1 = nil
+                  end
                 end
               end
             end
@@ -285,6 +290,196 @@ module LatexToUnicode
       end
 
       node_cache[:sqrt][start_index] = r0
+
+      r0
+    end
+
+    module Combining0
+      def combining_command
+        elements[0]
+      end
+
+      def element
+        elements[1]
+      end
+    end
+
+    module Combining1
+      def value
+        LatexToUnicode::translate_combining(element.value, 
+          combining_command.text_value[1..-1].to_sym)
+      end
+    end
+
+    def _nt_combining
+      start_index = index
+      if node_cache[:combining].has_key?(index)
+        cached = node_cache[:combining][index]
+        if cached
+          cached = SyntaxNode.new(input, index...(index + 1)) if cached == true
+          @index = cached.interval.end
+        end
+        return cached
+      end
+
+      i0, s0 = index, []
+      r1 = _nt_combining_command
+      s0 << r1
+      if r1
+        r2 = _nt_element
+        s0 << r2
+      end
+      if s0.last
+        r0 = instantiate_node(SyntaxNode,input, i0...index, s0)
+        r0.extend(Combining0)
+        r0.extend(Combining1)
+      else
+        @index = i0
+        r0 = nil
+      end
+
+      node_cache[:combining][start_index] = r0
+
+      r0
+    end
+
+    def _nt_combining_command
+      start_index = index
+      if node_cache[:combining_command].has_key?(index)
+        cached = node_cache[:combining_command][index]
+        if cached
+          cached = SyntaxNode.new(input, index...(index + 1)) if cached == true
+          @index = cached.interval.end
+        end
+        return cached
+      end
+
+      i0 = index
+      if has_terminal?('\hat', false, index)
+        r1 = instantiate_node(SyntaxNode,input, index...(index + 4))
+        @index += 4
+      else
+        terminal_parse_failure('\hat')
+        r1 = nil
+      end
+      if r1
+        r0 = r1
+      else
+        if has_terminal?('\breve', false, index)
+          r2 = instantiate_node(SyntaxNode,input, index...(index + 6))
+          @index += 6
+        else
+          terminal_parse_failure('\breve')
+          r2 = nil
+        end
+        if r2
+          r0 = r2
+        else
+          if has_terminal?('\grave', false, index)
+            r3 = instantiate_node(SyntaxNode,input, index...(index + 6))
+            @index += 6
+          else
+            terminal_parse_failure('\grave')
+            r3 = nil
+          end
+          if r3
+            r0 = r3
+          else
+            if has_terminal?('\bar', false, index)
+              r4 = instantiate_node(SyntaxNode,input, index...(index + 4))
+              @index += 4
+            else
+              terminal_parse_failure('\bar')
+              r4 = nil
+            end
+            if r4
+              r0 = r4
+            else
+              if has_terminal?('\check', false, index)
+                r5 = instantiate_node(SyntaxNode,input, index...(index + 6))
+                @index += 6
+              else
+                terminal_parse_failure('\check')
+                r5 = nil
+              end
+              if r5
+                r0 = r5
+              else
+                if has_terminal?('\acute', false, index)
+                  r6 = instantiate_node(SyntaxNode,input, index...(index + 6))
+                  @index += 6
+                else
+                  terminal_parse_failure('\acute')
+                  r6 = nil
+                end
+                if r6
+                  r0 = r6
+                else
+                  if has_terminal?('\tilde', false, index)
+                    r7 = instantiate_node(SyntaxNode,input, index...(index + 6))
+                    @index += 6
+                  else
+                    terminal_parse_failure('\tilde')
+                    r7 = nil
+                  end
+                  if r7
+                    r0 = r7
+                  else
+                    if has_terminal?('\vec', false, index)
+                      r8 = instantiate_node(SyntaxNode,input, index...(index + 4))
+                      @index += 4
+                    else
+                      terminal_parse_failure('\vec')
+                      r8 = nil
+                    end
+                    if r8
+                      r0 = r8
+                    else
+                      if has_terminal?('\dot', false, index)
+                        r9 = instantiate_node(SyntaxNode,input, index...(index + 4))
+                        @index += 4
+                      else
+                        terminal_parse_failure('\dot')
+                        r9 = nil
+                      end
+                      if r9
+                        r0 = r9
+                      else
+                        if has_terminal?('\ddot', false, index)
+                          r10 = instantiate_node(SyntaxNode,input, index...(index + 5))
+                          @index += 5
+                        else
+                          terminal_parse_failure('\ddot')
+                          r10 = nil
+                        end
+                        if r10
+                          r0 = r10
+                        else
+                          if has_terminal?('\mathring', false, index)
+                            r11 = instantiate_node(SyntaxNode,input, index...(index + 9))
+                            @index += 9
+                          else
+                            terminal_parse_failure('\mathring')
+                            r11 = nil
+                          end
+                          if r11
+                            r0 = r11
+                          else
+                            @index = i0
+                            r0 = nil
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+
+      node_cache[:combining_command][start_index] = r0
 
       r0
     end

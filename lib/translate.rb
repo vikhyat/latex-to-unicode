@@ -40,4 +40,21 @@ module LatexToUnicode
       "#{translate(radical, SUPERSCRIPTS)}√(#{radicand})"
     end
   end
+
+  def self.translate_combining(text, type)
+    text + 
+    case type
+    when :hat then '̂'  # this is the unicode "combining circumflex"
+    when :breve then '̆'
+    when :grave then '̀'
+    when :bar then '̄'
+    when :check then '̌'
+    when :acute then '́'
+    when :tilde then '̃'
+    when :vec then '⃗'
+    when :dot then '̇'
+    when :ddot then '̈'
+    when :mathring then '̊'
+    end
+  end
 end
