@@ -1,0 +1,17 @@
+<script src="jquery.js"></script>
+<script>
+  chrome.contextMenus.create({"title":"Convert to Unicode",
+    "contexts":["selection"], "onclick":callback});
+  chrome.contextMenus.create({"title":"Convert to Unicode","onclick":callback});
+
+  function callback(onClickData) {
+    var selection = onClickData["selectionText"]
+    if (typeof selection === 'undefined') {
+      selection = prompt("Enter the LaTeX markup below.")
+    }
+    var latex = encodeURIComponent(selection);
+    $.getJSON("http://vikhyat.net/dyn/latex_to_unicode/"+latex,function(json){
+      prompt("The generated Unicode can be copied below.", json["result"]);
+    });
+  }
+</script>

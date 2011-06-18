@@ -1,0 +1,8 @@
+{
+  "name": "LaTeX To Unicode",
+  "version": "0.1",
+  "description": "tbd",
+  "permissions": ["contextMenus", "http://vikhyat.net/"],
+  "background_page": "background.html",
+  "icons": {"16":"icon.png"}
+}
