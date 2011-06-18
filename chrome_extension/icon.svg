@@ -14,7 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/vikhyat/Desktop/coding/latex-to-unicode/chrome_extension/icon.png"
+   inkscape:export-xdpi="28.256329"
+   inkscape:export-ydpi="28.256329">
   <defs
      id="defs4">
     <filter
@@ -59,7 +62,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="9.9108751"
-     inkscape:cx="231.96599"
+     inkscape:cx="213.55187"
      inkscape:cy="640.29252"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -86,12 +89,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#b1d9f6;fill-opacity:1;stroke:#000000;stroke-width:1.93688798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#90a0d7;fill-opacity:1;stroke:#000022;stroke-width:2.0293417;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect2989"
-       width="39.920151"
-       height="35.177845"
+       width="41.146881"
+       height="40.988674"
        x="210.44341"
-       y="389.21979" />
+       y="385.60428"
+       inkscape:export-filename="/home/vikhyat/Desktop/coding/latex-to-unicode/chrome_extension/icon48.png"
+       inkscape:export-xdpi="100.10138"
+       inkscape:export-ydpi="100.10138" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -99,7 +105,7 @@
      inkscape:label="Layer">
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:-4.58000000000000007px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Serif;-inkscape-font-specification:DejaVu Serif;filter:url(#filter5570)"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:-4.58000000000000007px;word-spacing:0px;fill:#000021;fill-opacity:1;stroke:none;font-family:DejaVu Serif;-inkscape-font-specification:DejaVu Serif;filter:url(#filter5570);stroke-opacity:1"
        x="211.63264"
        y="420.78394"
        id="text2985"

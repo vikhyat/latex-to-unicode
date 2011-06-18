@@ -4,5 +4,9 @@
   "description": "Attempts to convert LaTeX math-mode markup into a more readable form using Unicode characters wherever possible.",
   "permissions": ["contextMenus", "http://vikhyat.net/"],
   "background_page": "background.html",
-  "icons": {"16":"icon.png"}
+  "icons": {
+    "16": "icon.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
