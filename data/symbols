@@ -1,6 +1,4 @@
 \Box □
-\langle 〈
-\rangle 〉
 \Bumpeq ≎
 \Cap ⋒
 \Cup ⋓
@@ -154,6 +152,7 @@
 \hookleftarrow ↩
 \hookrightarrow ↪
 \hslash ℏ
+\implies ⇒
 \in ∈
 \infty ∞
 \int ∫
@@ -161,6 +160,7 @@
 \iota ι
 \kappa κ
 \lambda λ
+\langle 〈
 \lceil ⌈
 \le ≤
 \leadsto ↝
@@ -234,6 +234,7 @@
 \prod ∏
 \propto ∝
 \psi ψ
+\rangle 〉
 \rceil ⌉
 \rfloor ⌋
 \rhd ⊳

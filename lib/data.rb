@@ -758,6 +758,7 @@ module LatexToUnicode
     "\\int" => "∫",
     "\\infty" => "∞",
     "\\in" => "∈",
+    "\\implies" => "⇒",
     "\\hslash" => "ℏ",
     "\\hookrightarrow" => "↪",
     "\\hookleftarrow" => "↩",
