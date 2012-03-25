@@ -1,6 +1,13 @@
 # coding: utf-8
 require File.dirname(__FILE__) + '/lib/convert.rb'
 
+def compare(rem, pr)
+  pr.split('').each.with_index do |x, i|
+    return false if x != rem[i]
+  end
+  return true
+end
+
 def replace(input, pair1, pair2)
   output  = []
   rem     = input.split('')
@@ -8,7 +15,7 @@ def replace(input, pair1, pair2)
   buffer  = []
   while rem.length > 0
     if in_flag
-      if rem[0] == pair2[0] and rem[1] == pair2[1]
+      if compare(rem[0], pair2)
         rem.shift(2)
         in_flag = false
         output.push LatexToUnicode::convert(buffer.join)
@@ -17,7 +24,7 @@ def replace(input, pair1, pair2)
         buffer.push rem.shift
       end
     else
-      if rem[0] == pair1[0] and rem[1] == pair1[1]
+      if compare(rem, pair1)
         rem.shift(2)
         in_flag = true
       else
