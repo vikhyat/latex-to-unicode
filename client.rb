@@ -1,3 +1,4 @@
+# coding: utf-8
 require File.dirname(__FILE__) + '/lib/convert.rb'
 
 def replace(input, pair1, pair2)
@@ -31,6 +32,7 @@ if ARGV[0] == "-f"
   input   = File.read(ARGV[1])
   output  = replace(input, '\\(', '\\)')
   output  = replace(output, "$$", "$$")
+  output  = replace(output, "$", "$")
   puts output
 else
   puts LatexToUnicode::convert(gets.chomp)
