@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'test/unit'
-require './lib/convert.rb'
+require './lib/latex-to-unicode.rb'
 
 class TestConverter < Test::Unit::TestCase
   def test_atoms
