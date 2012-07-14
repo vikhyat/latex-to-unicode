@@ -5,7 +5,7 @@ require './lib/convert.rb'
 class TestConverter < Test::Unit::TestCase
   def test_atoms
     # Ensure that all symbols are translated correctly
-    File.open('./data/symbols').readlines.each do |l|
+    File.open('./lib/data/symbols').readlines.each do |l|
       sym, res = l.split
       assert_equal res, LatexToUnicode::convert(sym)
     end
