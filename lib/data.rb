@@ -886,6 +886,7 @@ module LatexToUnicode
     "\\Theta" => "Θ",
     "\\Supset" => "⋑",
     "\\Subset" => "⋐",
+    "\\Sigma" => "∑",
     "\\Rsh" => "↱",
     "\\Rrightarrow" => "⇛",
     "\\Rightarrow" => "⇒",
