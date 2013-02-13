@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "latex-to-unicode"
-  s.version     = "0.1.1"
+  s.version     = "0.1.2"
   s.date        = "2012-07-14"
   s.summary     = "Latex math to Unicode character conversion."
   s.description = "Replaces LaTeX math-mode markup with Unicode characters wherever possible."
