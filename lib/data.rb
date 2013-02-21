@@ -6,6 +6,7 @@ module LatexToUnicode
     "\\mathcal" => "\\cal",
     "\\mathbf" => "\\bf",
     "\\mathbb" => "\\bb",
+    "\\ldots" => "\\dots",
     "\\dfrac" => "\\frac"
   }
   BB = {
