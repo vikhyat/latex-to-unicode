@@ -276,6 +276,7 @@
 \star ⋆
 \subset ⊂
 \subseteq ⊆
+\subsetneq ⊊
 \succ ≻
 \succcurlyeq ≽
 \succeq ≽
@@ -283,6 +284,7 @@
 \sum ∑
 \supset ⊃
 \supseteq ⊇
+\supsetneq ⊋
 \surd √
 \swarrow ↙
 \tau τ

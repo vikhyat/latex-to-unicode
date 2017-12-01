@@ -75,7 +75,7 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'â', LatexToUnicode::convert('\hata')
     assert_equal 'âb', LatexToUnicode::convert('\hatab')
     assert_equal 'Â', LatexToUnicode::convert('\hatA')
-    
+
     assert_equal 'ă', LatexToUnicode::convert('\breve{a}')
     assert_equal 'à', LatexToUnicode::convert('\grave{a}')
     assert_equal 'ā', LatexToUnicode::convert('\bar{a}')
@@ -86,6 +86,11 @@ class TestConverter < Test::Unit::TestCase
     assert_equal 'ȧ', LatexToUnicode::convert('\dot{a}')
     assert_equal 'ä', LatexToUnicode::convert('\ddot{a}')
     assert_equal 'å', LatexToUnicode::convert('\mathring{a}')
+  end
+
+  def test_subset
+    assert_equal '∅≠S⊊V', LatexToUnicode::convert('\emptyset \neq S \subsetneq V')
+    assert_equal 'A⊂B⊆C⊊D⊋E⊇F⊃G', LatexToUnicode::convert('A \subset B \subseteq C \subsetneq D \supsetneq E \supseteq F \supset G');
   end
 
   def test_actual_data
